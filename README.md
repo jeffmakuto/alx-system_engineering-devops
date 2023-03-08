@@ -1,1 +1,1 @@
-This repository deals with writing shell scripts.
+This repository deals with writing shell script files.
