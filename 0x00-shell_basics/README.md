@@ -29,3 +29,12 @@ The 13-symbolic link script file shows how to create a symbolic link to /bin/ls,
 The 14-copy html script file shows how to copy all the HTML files from the current working directory to the parent of the working directory, but only copy files that did not exist in the parent of the working directory or were newer than the versions in the parent of the working directory.
 
 The 100-lets move script file shows how to move all files beginning with an uppercase letter to the directory /tmp/u.
+
+The 101-clean emacs script file shows how to delete all files in the current working directory that end with the character ~.
+
+The 102-tree script file creates the directories welcome/, welcome/to/ and welcome/to/school in the current directory.
+
+The 103-commas script file lists all the files and directories of the current directory, separated by commas (,).
+
+The school.mgc script file can be used with the command file to detect School data files. School data files always contain the string SCHOOL at offset 0.
+
