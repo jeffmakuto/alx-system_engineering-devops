@@ -1,1 +1,1 @@
-README.md is not empty
+This repository deals with writing shell scripts.
