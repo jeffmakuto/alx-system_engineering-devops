@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1Ap | grep -v '^\.\/\|\.\.\/$' | head -n 6 | tr '\n' ',' | sed 's/,$/\n/'
+ls -1ap | awk '{printf "%s, ", $0} END {print ""}' | sed 's/,\s$/\n/'
