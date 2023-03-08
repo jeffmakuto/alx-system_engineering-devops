@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -al.  cd ..  ls -al  cd /boot  ls -al    ls -lR / | grep -E '^(\.\/|\.\.\/|\/boot\/)' | grep -v '^total'
+ls -la  ls -la ..  ls -la /boot
