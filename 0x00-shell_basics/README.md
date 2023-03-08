@@ -10,4 +10,6 @@ The 4-listmorefiles script file shows how to display current directory contents,
 
 The 5-listfilesdigitonly script file shows how to  display current directory contents; in long format, with user and group IDs displayed numerically, and hidden files (starting with .)
 
-The 6-firstdirectory script file shows a script file  that creates a directory named my first directory in the /tmp/ directory.
+The 6-firstdirectory script file shows a script file that creates a directory named my first directory in the /tmp/ directory.
+
+The 7-movethatfile script file shows how to move the file betty from /tmp directory to /tmp/my first directory.
