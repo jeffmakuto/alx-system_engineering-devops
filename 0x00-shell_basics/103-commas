@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -xamp | awk '{print $NF}' | sed '1d' | sed '$d' | tr '\n' ',' | sed 's/,$/\n/' | sed 's/^\./.\/&/'
+ls -xamp
