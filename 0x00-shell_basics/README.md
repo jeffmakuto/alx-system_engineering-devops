@@ -17,3 +17,5 @@ The 7-movethatfile script file shows how to move the file betty from /tmp direct
 The 8-firstdelete script file shows how to dlete the file named betty.
 
 The 9-firstdirdeletion script file shows how to delete the directory my first directory that is in the /tmp directory.
+
+The 10-back script file shows how to change the working directory to the previous one.
