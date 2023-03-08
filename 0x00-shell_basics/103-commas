@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -1ap | awk '{printf "%s, ", $0} END {print ""}' | sed 's/,\s$/\n/'
+ls -xamp
