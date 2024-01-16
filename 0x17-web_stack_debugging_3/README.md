@@ -1,5 +1,3 @@
-.
-├── 0-strace_is_your_friend.pp
-└── README.md
+# 0X17. Web Stack Debugging #3
 
-0 directories, 2 files
+
