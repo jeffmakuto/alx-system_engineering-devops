@@ -11,9 +11,3 @@ A great API to use for some practice is the Reddit API. There’s a lot of endpo
 * How to parse JSON results from an API
 * How to make a recursive API call
 * How to sort a dictionary by value
-
-
-## General
-Allowed editors: vi, vim, emacs
-All files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.4.3)
-You must use the Requests module for sending HTTP requests to the Reddit API
