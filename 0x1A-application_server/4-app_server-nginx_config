@@ -15,7 +15,7 @@ server {
 
     # Forward requests to the /api/ route to the Gunicorn server on port 5002
     location = /api/ {
-        proxy_pass http://0.0.0.0:5002/api/;
+        proxy_pass http://0.0.0.0:5002;
     }
 
     # Redirect to GitHub when accessing /redirect_me
