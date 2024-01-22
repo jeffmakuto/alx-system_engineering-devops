@@ -30,7 +30,11 @@ server {
 
     # Main location block
     location / {
-        return 200 'Hello, you reached 307239-web-01!';
+        proxy_pass http://127.0.0.1:5003;
+    }
+
+    location /static/ {
+        alias /home/ubuntu/AirBnB_clone_v4/web_dynamic/static/;
     }
 
     # Add a custom header
