@@ -3,13 +3,18 @@ server {
     listen [::]:80 default_server;
     server_name _;
 
+    # Add a custom header
+    add_header X-Served-By 307239-web-01;
+
     # Serve /airbnb-onepage/ route from AirBnB_clone_v2
     location = /airbnb-onepage/ {
         proxy_pass http://127.0.0.1:5000/airbnb-onepage/;
     }
 
     # Redirect to GitHub when accessing /redirect_me
-    rewrite ^/redirect_me https://github.com/jeffmakuto permanent;
+    location = /redirect_me {
+        return 301 https://github.com/jeffmakuto;
+    }
 
     # Custom 404 error page
     error_page 404 /custom_404.html;
@@ -17,12 +22,4 @@ server {
         root /usr/share/nginx/html;
         internal;
     }
-
-    # Main location block
-    location / {
-        return 200 'Hello, you reached 307239-web-01!';
-    }
-
-    # Add a custom header
-    add_header X-Served-By 307239-web-01;
 }
