@@ -1,18 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Gracefully reloads Gunicorn.
 
-# Find the Gunicorn master process ID
-master_pid=$(ps aux | grep '[g]unicorn' | awk '{print $2}')
-
-# Display the current Gunicorn processes
-echo "Before Reload:"
-ps aux | grep '[g]unicorn'
-
-# Send a graceful reload signal to the Gunicorn master process
-kill -s HUP $master_pid
-
-# Wait for a few seconds to allow workers to finish processing requests
-sleep 5
-
-# Display the updated Gunicorn processes
-echo "After Reload:"
-ps aux | grep '[g]unicorn'
+ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
