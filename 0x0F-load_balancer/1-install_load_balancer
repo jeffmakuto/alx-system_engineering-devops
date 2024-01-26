@@ -25,16 +25,16 @@ defaults
     timeout connect  5000
     timeout client  10000
     timeout server  10000
-listen hbnb
-    bind 0.0.0.0:80
-    mode http
-    stats enable
-    stats uri /haproxy?stats
-    balance roundrobin
-    option httpclose
-    option forwardfor
-    server 322936-web-01 54.146.77.13:80 check
-    server 322936-web-02 18.234.192.116:80 check
+frontend app
+        bind *:80
+        mode http
+        default_backend webservers
+
+backend webservers
+        mode http
+        balance roundrobin
+        server web-01 35.153.50.156:80 check
+        server web-02 100.25.203.149:80 check
 " >> /etc/haproxy/haproxy.cfg
 
 service haproxy start
