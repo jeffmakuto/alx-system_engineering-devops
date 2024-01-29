@@ -22,7 +22,7 @@ frontend http
     default_backend app
 
 frontend https
-    bind *:443 ssl crt /etc/ssl/haproxy.pem
+    bind *:443 ssl crt /home/ubuntu/combined.pem
     reqadd X-Forwarded-Proto:\ https
     default_backend app
 
