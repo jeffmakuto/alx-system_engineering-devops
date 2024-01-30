@@ -7,14 +7,5 @@ month=$(date +"%m")
 year=$(date +"%Y")
 file_name="$day-$month-$year.tar.gz"
 
-# Dump all MySQL databases to backup.sql
 mysqldump --all-databases -u root --password="$1" > backup.sql
-
-# Compress the backup.sql file using gzip
-gzip backup.sql
-
-# Create a tar.gz archive with the compressed backup.sql file
-tar -czvf "$file_name" backup.sql.gz
-
-# Remove the original compressed backup.sql file
-rm backup.sql.gz
+tar -czvf "$file_name" backup.sql
