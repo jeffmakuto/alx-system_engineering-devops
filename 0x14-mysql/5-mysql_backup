@@ -1,11 +1,23 @@
 #!/usr/bin/env bash
-# backup and compress my databases
 
-# variables
-day=$(date +"%d")
-month=$(date +"%m")
-year=$(date +"%Y")
-file_name="$day-$month-$year.tar.gz"
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <mysql_password>"
+    exit 1
+fi
 
-mysqldump --all-databases -u root --password="$1" > backup.sql
-tar -czvf "$file_name" backup.sql
+# MySQL database credentials
+mysql_user="root"
+mysql_password="$1"
+
+# Get the current date in the required format (day-month-year)
+current_date=$(date +'%d-%m-%Y')
+
+# Create a MySQL dump file and compress it into a tar.gz archive
+mysqldump -u "$mysql_user" -p"$mysql_password" --all-databases | gzip > "$current_date.tar.gz"
+
+# Exit if mysqldump or compression fails
+if [ $? -ne 0 ]; then
+    echo "Error: MySQL dump or compression failed."
+    exit 1
+fi
